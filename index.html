@@ -3,421 +3,472 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Studio Hair Salon &amp; Barbershop | New Brunswick, NJ</title>
-<meta name="description" content="Barbershop and hair salon on Easton Ave, New Brunswick. Fades, beard work, kids cuts, locs and facials. Open late seven days a week. Book online through Booksy.">
-<meta name="theme-color" content="#0E1A2B">
-<script src="https://cdn.tailwindcss.com"></script>
+<title>Quality Dry Cleaning & Tailoring | North Brunswick, NJ</title>
+<meta name="description" content="Dry cleaning, wash-and-fold laundry, laundromat and alterations at 699 Georges Rd, North Brunswick, NJ. Open 7 days. Hablamos español.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gloock&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Young+Serif&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          cotton: '#EEF2F3', linen: '#F8FAFA', navy: { DEFAULT: '#16263A', 700: '#22364E', 500: '#4A5D72' },
+          sky: { DEFAULT: '#D3E1EC', 600: '#B4CADB' }, thread: '#B3313C', steel: '#7C8B99',
+        },
+        fontFamily: { serif: ['"Young Serif"', 'Georgia', 'serif'], sans: ['"Public Sans"', 'system-ui', 'sans-serif'] },
+      },
+    },
+  };
+</script>
 <style>
-  :root{
-    /* brand palette */
-    --navy:#0E1A2B;          /* background */
-    --red:#C8102E;           /* accent / buttons */
-    --cream:#FAF7F0;         /* headings + main text */
-    --steel:#9FB3C8;         /* secondary text */
-    /* derived from the palette */
-    --navy-deep:#09121F;     /* sunken */
-    --navy-2:#132338;        /* elevated */
-    --navy-3:#1A2E47;        /* floating */
-    --red-hover:#DC1B3A; --red-active:#A30C25;
-    --line:rgba(159,179,200,.16);
-    --ease-spring:cubic-bezier(.34,1.56,.64,1);
-    --ease-out:cubic-bezier(.22,1,.36,1);
+  :root {
+    --cotton: #EEF2F3; --linen: #F8FAFA; --navy: #16263A; --navy-700: #22364E; --navy-500: #4A5D72;
+    --sky: #D3E1EC; --sky-600: #B4CADB; --thread: #B3313C; --steel: #7C8B99;
+    --rule: rgba(22, 38, 58, .14);
+    --spring: cubic-bezier(.34, 1.56, .64, 1);
+    --ease-out: cubic-bezier(.22, 1, .36, 1);
     /* spacing tokens */
-    --s1:8px; --s2:16px; --s3:24px; --s4:40px; --s5:64px; --s6:104px;
-    --shadow-elev:0 1px 2px rgba(4,9,18,.4),0 12px 28px -12px rgba(4,9,18,.6);
-    --shadow-float:0 2px 6px rgba(4,9,18,.35),0 28px 56px -18px rgba(4,9,18,.75),0 56px 110px -40px rgba(200,16,46,.18);
+    --s-1: .5rem; --s-2: 1rem; --s-3: 1.5rem; --s-4: 2.5rem; --s-5: 4rem; --s-6: 6.5rem;
+    /* elevation */
+    --e-1: 0 1px 2px rgba(22, 38, 58, .06), 0 2px 6px rgba(22, 38, 58, .05);
+    --e-2: 0 2px 4px rgba(22, 38, 58, .06), 0 10px 24px -6px rgba(22, 38, 58, .14);
+    --e-3: 0 4px 8px rgba(22, 38, 58, .08), 0 24px 48px -12px rgba(22, 38, 58, .28), 0 48px 80px -32px rgba(40, 80, 120, .22);
   }
-  *{box-sizing:border-box}
-  html{scroll-behavior:smooth;scroll-padding-top:84px;background:var(--navy)}
-  body{margin:0;background:var(--navy);color:var(--cream);font-family:'Figtree',system-ui,sans-serif;font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:clip}
-  .display{font-family:'Gloock',Georgia,serif;font-weight:400;letter-spacing:-0.03em;line-height:1.02;color:var(--cream)}
-  .wrap{width:100%;max-width:1200px;margin:0 auto;padding:0 var(--s2)}
-  @media (min-width:768px){.wrap{padding:0 var(--s4)}}
-  a{color:inherit}
-  .grid > *{min-width:0}
-  .muted{color:var(--steel)}
-  :focus-visible{outline:2px solid var(--cream);outline-offset:3px;border-radius:6px}
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body { background: var(--cotton); color: var(--navy); font-family: "Public Sans", system-ui, sans-serif; line-height: 1.7; }
+  h1, h2, h3 { font-family: "Young Serif", Georgia, serif; font-weight: 400; letter-spacing: -0.03em; line-height: 1.05; }
+  h3 { letter-spacing: -0.015em; line-height: 1.2; }
+  .measure { max-width: 62ch; }
+  .wrap { width: 100%; max-width: 1200px; margin-inline: auto; padding-inline: 1rem; }
+  @media (min-width: 640px) { .wrap { padding-inline: 2rem; } }
+  .section { padding-block: var(--s-5); }
+  @media (min-width: 1024px) { .section { padding-block: var(--s-6); } }
 
   /* grain */
-  .grain{position:relative;isolation:isolate}
-  .grain::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;opacity:.14;mix-blend-mode:overlay;
-    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
-  .grain > *{position:relative;z-index:1}
+  .grain { position: relative; isolation: isolate; }
+  .grain::after {
+    content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: .5; mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.09 0 0 0 0 0.15 0 0 0 0 0.23 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .hero-bg {
+    background:
+      radial-gradient(60% 70% at 85% 20%, rgba(150, 185, 215, .32), transparent 60%),
+      radial-gradient(50% 60% at 10% 90%, rgba(124, 139, 153, .20), transparent 70%),
+      radial-gradient(40% 40% at 60% 100%, rgba(179, 49, 60, .06), transparent 70%),
+      var(--cotton);
+  }
 
   /* buttons */
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;font-weight:600;font-size:16px;text-decoration:none;cursor:pointer;border:0;
-    transition:transform .45s var(--ease-spring),opacity .2s ease;will-change:transform}
-  .btn:hover{transform:translateY(-2px)}
-  .btn:active{transform:translateY(1px) scale(.98);transition-duration:.12s}
-  .btn-primary{background:var(--red);color:var(--cream);box-shadow:0 1px 0 rgba(255,255,255,.18) inset,0 12px 26px -12px rgba(200,16,46,.85)}
-  .btn-primary:hover{background:var(--red-hover)}
-  .btn-primary:active{background:var(--red-active)}
-  .btn-ghost{background:transparent;color:var(--cream);box-shadow:inset 0 0 0 1.5px rgba(250,247,240,.3)}
-  .btn-ghost:hover{box-shadow:inset 0 0 0 1.5px rgba(250,247,240,.75)}
-  .btn-ghost:active{background:rgba(250,247,240,.08)}
-  .link{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px;transition:opacity .2s ease}
-  .link:hover{opacity:.7}
-  .link:active{opacity:.5}
+  .btn { display: inline-flex; align-items: center; gap: .6rem; padding: .9rem 1.35rem; border-radius: 999px; font-weight: 600; font-size: 1rem; line-height: 1.2;
+    transition: transform .35s var(--spring), opacity .2s ease; will-change: transform; }
+  .btn:hover { transform: translateY(-2px); }
+  .btn:active { transform: translateY(1px) scale(.98); }
+  .btn:focus-visible, .link:focus-visible, .lang-btn:focus-visible, a:focus-visible { outline: 3px solid var(--thread); outline-offset: 3px; }
+  .btn-primary { background: var(--navy); color: var(--linen); box-shadow: var(--e-2); }
+  .btn-ghost { background: transparent; color: var(--navy); box-shadow: inset 0 0 0 1.5px var(--navy); }
+  .btn-ghost:hover { opacity: .85; }
+  .link { text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 4px; text-decoration-color: rgba(22, 38, 58, .35); transition: opacity .2s ease; }
+  .link:hover { opacity: .7; }
+  .link:active { opacity: .5; }
+  .nav-link { position: relative; font-weight: 500; padding-block: .25rem; }
+  .nav-link::after { content: ""; position: absolute; left: 0; right: 0; bottom: -2px; height: 2px; background: var(--thread); transform: scaleX(0); transform-origin: left; transition: transform .35s var(--ease-out); }
+  .nav-link:hover::after, .nav-link:focus-visible::after { transform: scaleX(1); }
+  .nav-link:active { opacity: .6; }
 
-  /* nav */
-  .nav{position:fixed;inset:0 0 auto 0;z-index:50}
-  .nav-bg{position:absolute;inset:0;background:rgba(9,18,31,.9);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);opacity:0;transition:opacity .35s ease;box-shadow:0 1px 0 var(--line),0 10px 30px -18px rgba(0,0,0,.7)}
-  .nav.scrolled .nav-bg{opacity:1}
-  .nav a.navlink{color:var(--steel);text-decoration:none;font-weight:500;font-size:15px;padding:8px 2px;transition:opacity .2s ease,color .2s ease}
-  .nav a.navlink:hover{color:var(--cream)}
-  .nav a.navlink:active{opacity:.6}
+  .lang { display: inline-flex; padding: 3px; border-radius: 999px; background: rgba(22, 38, 58, .07); }
+  .lang-btn { padding: .3rem .7rem; border-radius: 999px; font-size: .85rem; font-weight: 600; color: var(--navy-500); transition: opacity .2s ease, transform .3s var(--spring); }
+  .lang-btn:hover { opacity: .75; }
+  .lang-btn:active { transform: scale(.94); }
+  .lang-btn[aria-pressed="true"] { background: var(--linen); color: var(--navy); box-shadow: var(--e-1); }
 
-  /* hero */
-  .hero{background:
-      radial-gradient(45% 55% at 78% 45%, rgba(200,16,46,.20), transparent 70%),
-      radial-gradient(50% 60% at 5% 100%, rgba(159,179,200,.12), transparent 70%),
-      radial-gradient(90% 80% at 50% 0%, #15263D, var(--navy) 60%, var(--navy-deep))}
-  .hero h1{font-size:clamp(46px,8.4vw,104px)}
-  .status{display:inline-flex;align-items:center;gap:10px;padding:8px 16px 8px 12px;border-radius:999px;background:rgba(159,179,200,.08);box-shadow:inset 0 0 0 1px var(--line);font-size:15px;font-weight:500;color:var(--cream)}
-  .dot{width:9px;height:9px;border-radius:50%;box-shadow:inset 0 0 0 1.5px var(--steel)}
-  .dot.open{background:var(--cream);box-shadow:none;animation:pulse 2.4s var(--ease-out) infinite}
-  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(250,247,240,.5)}100%{box-shadow:0 0 0 12px rgba(250,247,240,0)}}
-
-  /* mirror arch holding the barber pole */
-  .mirror{position:relative;border-radius:999px 999px 28px 28px;aspect-ratio:3/4.1;
-    background:
-      radial-gradient(60% 45% at 50% 50%, rgba(200,16,46,.22), transparent 70%),
-      radial-gradient(80% 60% at 50% 0%, rgba(159,179,200,.14), transparent 70%),
-      linear-gradient(180deg,var(--navy-3),var(--navy-2) 60%,var(--navy-deep));
-    box-shadow:var(--shadow-float),inset 0 0 0 1px rgba(159,179,200,.18);
-    outline:1px solid rgba(159,179,200,.28);outline-offset:10px;
-    display:flex;align-items:center;justify-content:center;overflow:hidden}
-  .barber-pole{position:relative;height:84%;display:flex;flex-direction:column;align-items:center;filter:drop-shadow(0 30px 40px rgba(4,9,18,.6))}
-  .bp-finial{width:30px;height:30px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff,#C9D5E1 35%,#6E8299 80%,#3B4C61)}
-  .bp-neck{width:16px;height:14px;background:linear-gradient(90deg,#4A5C72,#DCE4EC 45%,#7A8DA3)}
-  .bp-cap{width:118px;height:30px;border-radius:12px 12px 6px 6px;background:linear-gradient(90deg,#3B4C61,#E6ECF2 40%,#9FB3C8 62%,#3B4C61)}
-  .bp-cap.bottom{border-radius:6px 6px 12px 12px;height:34px}
-  .bp-tube{position:relative;flex:1;width:96px;overflow:hidden;background:var(--cream)}
-  .bp-stripes{position:absolute;left:0;right:0;top:0;height:calc(100% + 120px);
-    background-image:linear-gradient(45deg,
-      var(--red) 0 12.5%, var(--cream) 12.5% 25%, #1D3A66 25% 37.5%, var(--cream) 37.5% 50%,
-      var(--red) 50% 62.5%, var(--cream) 62.5% 75%, #1D3A66 75% 87.5%, var(--cream) 87.5% 100%);
-    background-size:120px 120px;animation:spin 2.6s linear infinite;will-change:transform}
-  @keyframes spin{from{transform:translateY(-120px)}to{transform:translateY(0)}}
-  .bp-glass{position:absolute;inset:0;pointer-events:none;
-    background:linear-gradient(90deg,rgba(9,18,31,.55) 0%,rgba(9,18,31,.05) 22%,rgba(255,255,255,.55) 34%,rgba(255,255,255,0) 46%,rgba(9,18,31,0) 70%,rgba(9,18,31,.6) 100%)}
-  .float-card{position:absolute;background:var(--navy-3);color:var(--cream);border-radius:18px;padding:14px 18px;box-shadow:var(--shadow-float),inset 0 0 0 1px var(--line)}
-
-  /* hero load sequence (single orchestrated moment) */
-  .rise{opacity:0;transform:translateY(22px);animation:rise .9s var(--ease-out) forwards}
-  @keyframes rise{to{opacity:1;transform:none}}
-  .d1{animation-delay:.05s}.d2{animation-delay:.15s}.d3{animation-delay:.28s}.d4{animation-delay:.4s}.d5{animation-delay:.55s}
-
-  /* pole divider */
-  .pole{height:8px;background:repeating-linear-gradient(-45deg,var(--red) 0 14px,var(--cream) 14px 28px,var(--navy-3) 28px 42px,var(--cream) 42px 56px)}
-
-  /* services */
-  .tabs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:4px;margin:-4px}
-  .tabs::-webkit-scrollbar{display:none}
-  .tab{flex:none;min-height:44px;padding:0 18px;border-radius:999px;border:0;background:transparent;color:var(--steel);font:600 15px 'Figtree',sans-serif;cursor:pointer;box-shadow:inset 0 0 0 1px var(--line);transition:transform .4s var(--ease-spring),opacity .2s ease}
-  .tab:hover{color:var(--cream);box-shadow:inset 0 0 0 1px rgba(159,179,200,.45)}
-  .tab:active{transform:scale(.96)}
-  .tab[aria-selected="true"]{background:var(--red);color:var(--cream);box-shadow:0 10px 24px -12px rgba(200,16,46,.8)}
-  @media (min-width:1024px){
-    .tabs{flex-direction:column;overflow:visible}
-    .tab{text-align:left;border-radius:14px;min-height:52px;font-size:16px}
+  /* rail + ticket (signature) */
+  .rail { position: absolute; left: -10%; right: -10%; top: 0; height: 10px; border-radius: 6px;
+    background: linear-gradient(180deg, #c9d1d7, #8c99a5 55%, #6d7a86); box-shadow: 0 6px 12px -4px rgba(22, 38, 58, .35); }
+  .hanger { transform-origin: 50% 0; animation: swing 2.4s var(--ease-out) .2s both; }
+  @keyframes swing {
+    0% { transform: rotate(-14deg); opacity: 0; }
+    15% { opacity: 1; }
+    40% { transform: rotate(6deg); }
+    65% { transform: rotate(-3.5deg); }
+    85% { transform: rotate(1deg); }
+    100% { transform: rotate(-2deg); }
   }
-  .menu-card{background:var(--navy-2);border-radius:24px;box-shadow:var(--shadow-elev),inset 0 0 0 1px var(--line);padding:var(--s3)}
-  @media (min-width:768px){.menu-card{padding:var(--s4)}}
-  .row{display:grid;grid-template-columns:1fr auto;align-items:baseline;gap:4px 16px;padding:18px 0;border-bottom:1px solid var(--line)}
-  .row:last-child{border-bottom:0}
-  .row-name{display:flex;align-items:baseline;gap:12px;font-weight:600;font-size:17px;min-width:0;color:var(--cream)}
-  .row-name::after{content:"";flex:1;border-bottom:1.5px dotted rgba(159,179,200,.35);transform:translateY(-4px);min-width:24px}
-  .row-price{font-family:'Gloock',serif;font-size:24px;letter-spacing:-0.02em;color:var(--cream);white-space:nowrap}
-  .row-price small{font-family:'Figtree',sans-serif;font-size:13px;letter-spacing:0;color:var(--steel);font-weight:500;margin-right:4px}
-  .row-time{grid-column:1/-1;font-size:14px;color:var(--steel);line-height:1.4}
-  .panel{animation:panel .5s var(--ease-out)}
-  @keyframes panel{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .ticket { background:
+      radial-gradient(120% 80% at 0% 0%, rgba(255, 255, 255, .45), transparent 50%),
+      linear-gradient(180deg, #D2E1EE, #B9CFE2);
+    color: var(--navy); border-radius: 6px; box-shadow: var(--e-3); position: relative; }
+  .ticket .hole { width: 18px; height: 18px; border-radius: 50%; background: var(--cotton); box-shadow: inset 0 2px 3px rgba(22, 38, 58, .35); }
+  .perf { height: 0; border-top: 2px dashed rgba(22, 38, 58, .35); position: relative; }
+  .perf::before, .perf::after { content: ""; position: absolute; top: -10px; width: 18px; height: 18px; border-radius: 50%; background: var(--cotton); }
+  .perf::before { left: -9px; } .perf::after { right: -9px; }
+  .stamp { color: var(--thread); border: 2px solid var(--thread); border-radius: 4px; transform: rotate(-6deg); display: inline-block; padding: .1rem .55rem; font-family: "Young Serif", serif; opacity: .9; }
+  .ticket-row { display: flex; justify-content: space-between; gap: 1rem; padding-block: .55rem; border-bottom: 1px solid rgba(22, 38, 58, .16); font-size: .95rem; }
+  .ticket-row:last-child { border-bottom: 0; }
 
-  /* specialty tiles */
-  .spec{position:relative;display:flex;flex-direction:column;gap:6px;padding:var(--s3);border-radius:20px;text-decoration:none;color:var(--cream);
-    background:radial-gradient(120% 90% at 100% 0%,rgba(200,16,46,.10),transparent 60%),var(--navy-2);
-    box-shadow:var(--shadow-elev),inset 0 0 0 1px var(--line);transition:transform .45s var(--ease-spring)}
-  .spec:hover{transform:translateY(-4px)}
-  .spec:active{transform:translateY(0) scale(.985);transition-duration:.12s}
-  .spec:focus-visible{outline-offset:4px;border-radius:20px}
-  .spec::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:var(--shadow-float);opacity:0;transition:opacity .3s ease;pointer-events:none}
-  .spec:hover::after{opacity:1}
-  .spec-icon{width:48px;height:48px;margin-bottom:var(--s2);fill:none;stroke:var(--cream);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-  .spec-icon .accent{stroke:var(--red);stroke-width:3}
-  .spec-icon .fill{fill:var(--red);stroke:none}
-  .spec-title{font-family:'Gloock',serif;font-size:26px;letter-spacing:-0.02em;line-height:1.15}
-  .spec-text{color:var(--steel);font-size:15px;line-height:1.6}
-  .spec-price{margin-top:var(--s2);padding-top:var(--s2);border-top:1px solid var(--line);font-weight:600;font-size:15px;color:var(--cream)}
+  /* service rows */
+  .svc { display: grid; grid-template-columns: 44px 1fr; gap: 1rem 1.25rem; padding-block: var(--s-3); border-top: 1px solid var(--rule); }
+  .svc:last-child { border-bottom: 1px solid var(--rule); }
+  .svc-icon { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: var(--linen); box-shadow: var(--e-1); color: var(--navy); }
+  @media (min-width: 768px) { .svc { grid-template-columns: 52px 1fr 1.3fr; align-items: baseline; } .svc-icon { align-self: start; } }
 
-  /* hours */
-  .hours-row{display:flex;justify-content:space-between;gap:16px;padding:16px 20px;border-radius:14px}
-  .hours-row.today{background:var(--navy-3);box-shadow:var(--shadow-elev),inset 3px 0 0 var(--red)}
-  .hours-row.today .muted{color:var(--cream)}
-  .map{border:0;width:100%;height:100%;min-height:360px;display:block;filter:invert(.92) hue-rotate(180deg) saturate(.55) brightness(.95)}
+  .photo { position: relative; overflow: hidden; border-radius: 20px; box-shadow: var(--e-3); }
+  .photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-  .sticky-book{position:fixed;left:12px;right:12px;bottom:12px;z-index:40;display:flex;gap:8px;padding:8px;border-radius:999px;background:rgba(9,18,31,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:var(--shadow-float),inset 0 0 0 1px var(--line);transform:translateY(140%);transition:transform .6s var(--ease-spring)}
-  .sticky-book.show{transform:none}
-  .sticky-book .btn{min-height:46px;flex:1;padding:0 16px;font-size:15px}
-  @media (min-width:768px){.sticky-book{display:none}}
+  .tag { display: inline-flex; align-items: center; gap: .5rem; padding: .45rem .9rem; border-radius: 999px; background: var(--linen); box-shadow: var(--e-1); font-size: .95rem; }
+  .tag svg { color: var(--thread); flex: none; }
 
-  @media (prefers-reduced-motion:reduce){
-    *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
-    html{scroll-behavior:auto}
+  .hours-row { display: flex; justify-content: space-between; padding: .7rem .9rem; border-radius: 10px; }
+  .hours-row.is-today { background: var(--sky); font-weight: 600; box-shadow: 0 6px 16px -8px rgba(40, 80, 120, .45); }
+
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: #2E8B57; box-shadow: 0 0 0 4px rgba(46, 139, 87, .18); }
+  .dot.closed { background: var(--thread); box-shadow: 0 0 0 4px rgba(179, 49, 60, .18); }
+
+  .skip { position: absolute; left: 1rem; top: -100px; background: var(--navy); color: var(--linen); padding: .6rem 1rem; border-radius: 8px; z-index: 100; }
+  .skip:focus { top: 1rem; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .hanger { animation: none; transform: rotate(-2deg); }
+    .btn, .nav-link::after, .lang-btn { transition: none; }
   }
 </style>
 </head>
 <body>
+<a href="#main" class="skip" data-i18n="skip">Skip to content</a>
 
-<!-- NAV -->
-<header class="nav" id="nav">
-  <div class="nav-bg"></div>
-  <div class="wrap relative flex items-center justify-between" style="height:72px">
-    <a href="#top" class="flex items-center gap-3" style="text-decoration:none;color:var(--cream)" aria-label="Studio Hair Salon and Barbershop, back to top">
-      <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><rect x="10" y="1" width="10" height="28" rx="5" fill="none" stroke="#9FB3C8" stroke-width="1.5"/><path d="M11 9l8-4M11 15l8-4M11 21l8-4M11 27l8-4" stroke="#C8102E" stroke-width="2"/></svg>
-      <span class="display" style="font-size:22px;letter-spacing:-0.02em">Studio</span>
+<!-- Header -->
+<header class="sticky top-0 z-40 border-b" style="border-color: var(--rule); background: rgba(238, 242, 243, .86); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
+  <div class="wrap flex items-center justify-between gap-4 py-3">
+    <a href="#top" class="flex items-center gap-3 rounded-md" aria-label="Quality Dry Cleaning & Tailoring, home">
+      <svg width="38" height="38" viewBox="0 0 40 40" aria-hidden="true">
+        <rect width="40" height="40" rx="10" fill="#16263A"/>
+        <path d="M20 9.5a3 3 0 1 1 3 3c-1.2 0-3 .9-3 2.4v1.6l11.5 8.3c1.2.9.6 2.7-.9 2.7H9.4c-1.5 0-2.1-1.8-.9-2.7L20 16.5" fill="none" stroke="#A9C4DD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M14 31h12" stroke="#B3313C" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 3"/>
+      </svg>
+      <span class="leading-tight">
+        <span class="block font-serif text-[1.05rem] tracking-[-0.01em]">Quality Dry Cleaning</span>
+        <span class="block text-[.8rem] text-navy-500">&amp; Tailoring</span>
+      </span>
     </a>
-    <nav class="hidden md:flex items-center gap-8" aria-label="Main">
-      <a class="navlink" href="#services">Services &amp; prices</a>
-      <a class="navlink" href="#shop">The shop</a>
-      <a class="navlink" href="#visit">Hours &amp; location</a>
+    <nav class="hidden md:flex items-center gap-7 text-[.95rem]" aria-label="Main">
+      <a class="nav-link" href="#services" data-i18n="nav.services">Services</a>
+      <a class="nav-link" href="#tailoring" data-i18n="nav.tailoring">Tailoring</a>
+      <a class="nav-link" href="#visit" data-i18n="nav.visit">Hours &amp; location</a>
     </nav>
     <div class="flex items-center gap-3">
-      <a class="navlink hidden lg:inline" href="tel:+17324634018">(732) 463-4018</a>
-      <a class="btn btn-primary" style="min-height:44px;padding:0 20px;font-size:15px" href="https://booksy.com/en-us/1139310_studio-hair-salon-barbershop_barber-shop_28625_new-brunswick" target="_blank" rel="noopener">Book now</a>
+      <div class="lang" role="group" aria-label="Language">
+        <button class="lang-btn" data-lang="en" aria-pressed="true">EN</button>
+        <button class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
+      </div>
+      <a href="tel:+17322463346" class="btn btn-primary hidden sm:inline-flex !py-2.5 !px-4 text-[.92rem]">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+        <span data-i18n="cta.callShort">Call the shop</span>
+      </a>
     </div>
   </div>
 </header>
 
-<main id="top">
-<!-- HERO -->
-<section class="hero grain overflow-hidden">
-  <div class="wrap grid lg:grid-cols-12 gap-12 lg:gap-8 items-center" style="padding-top:132px;padding-bottom:var(--s6)">
-    <div class="lg:col-span-7">
-      <p class="status rise d1" aria-live="polite"><span class="dot" id="statusDot"></span><span id="statusText">Open seven days a week</span></p>
-      <h1 class="display rise d2" style="margin:var(--s3) 0 0">Sharp cuts on Easton&nbsp;Ave, open late every night.</h1>
-      <p class="muted rise d3" style="margin:var(--s3) 0 0;max-width:34em;font-size:19px">Fades, beard work, kids cuts, locs and facials in downtown New Brunswick. Book a chair online any time, or call and we'll fit you in.</p>
-      <div class="flex flex-wrap gap-3 rise d4" style="margin-top:var(--s4)">
-        <a class="btn btn-primary" href="https://booksy.com/en-us/1139310_studio-hair-salon-barbershop_barber-shop_28625_new-brunswick" target="_blank" rel="noopener">Book on Booksy</a>
-        <a class="btn btn-ghost" href="tel:+17324634018">Call (732) 463-4018</a>
+<main id="main">
+<!-- Hero -->
+<section id="top" class="hero-bg grain overflow-hidden">
+  <div class="wrap grid lg:grid-cols-[1.15fr_.85fr] gap-12 lg:gap-8 items-center pt-12 pb-16 sm:pt-16 lg:pt-20 lg:pb-24">
+    <div>
+      <p class="inline-flex items-center gap-2 text-[.95rem] text-navy-500 mb-6">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#B3313C" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-6.1-7-11.5a7 7 0 0 1 14 0C19 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+        <span data-i18n="hero.where">699 Georges Rd, North Brunswick</span>
+      </p>
+      <h1 class="text-[2.75rem] sm:text-[4rem] lg:text-[4.75rem] max-w-[15ch]" data-i18n="hero.title">Clean clothes and a sharp fit, seven days a week.</h1>
+      <p class="mt-6 text-[1.1rem] sm:text-[1.2rem] text-navy-700 measure" data-i18n="hero.sub">Dry cleaning, laundry by the pound, a self-service laundromat and alterations by our in-house seamstress. Drop off before work, pick up on your way home.</p>
+      <div class="mt-8 flex flex-wrap items-center gap-3">
+        <a href="tel:+17322463346" class="btn btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+          <span data-i18n="cta.call">Call (732) 246-3346</span>
+        </a>
+        <a href="https://www.google.com/maps/place/Quality+Dry+Cleaning+%26+Tailoring/@40.46759,-74.453824,17z" target="_blank" rel="noopener" class="btn btn-ghost" data-i18n="cta.directions">Get directions</a>
       </div>
-      <dl class="flex flex-wrap gap-x-10 gap-y-4 rise d5" style="margin-top:var(--s5)">
-        <div><dt class="sr-only">Google rating</dt><dd class="m-0 flex items-baseline gap-2"><span class="display" style="font-size:36px">4.7</span><span class="muted" style="font-size:15px">from 162 Google reviews</span></dd></div>
-        <div><dt class="sr-only">Booksy rating</dt><dd class="m-0 flex items-baseline gap-2"><span class="display" style="font-size:36px">4.8</span><span class="muted" style="font-size:15px">on Booksy</span></dd></div>
+      <p class="mt-6 text-[.95rem] text-navy-500" data-i18n="hero.lang">Hablamos español.</p>
+    </div>
+
+    <!-- Claim ticket -->
+    <div class="relative mx-auto w-full max-w-[360px] pt-2 lg:justify-self-end lg:mr-6">
+      <div class="rail" aria-hidden="true"></div>
+      <div class="hanger relative pt-1">
+        <svg class="mx-auto block -mt-3" width="60" height="70" viewBox="0 0 60 70" aria-hidden="true">
+          <path d="M30 22V14c0-1.5 1-2.3 2.3-3a6 6 0 1 0-8.3-5.5" fill="none" stroke="#6d7a86" stroke-width="3.2" stroke-linecap="round"/>
+          <path d="M30 22v48" stroke="#B3313C" stroke-width="1.5"/>
+        </svg>
+        <article class="ticket grain overflow-hidden -mt-1" aria-label="Today at the shop">
+          <div class="flex justify-center pt-4"><span class="hole" aria-hidden="true"></span></div>
+          <div class="px-6 pb-5 pt-3">
+            <div class="flex items-start justify-between gap-3">
+              <p class="font-serif text-[1.05rem] leading-snug">Quality Dry Cleaning<br>&amp; Tailoring</p>
+              <span class="stamp text-[.95rem]">No. 699</span>
+            </div>
+            <div class="mt-5">
+              <p class="text-[.9rem] text-navy-500" id="today-label" data-i18n="ticket.today">Today</p>
+              <p class="font-serif text-[2.4rem] leading-none tracking-[-0.03em] mt-1" id="today-hours">7 am – 9 pm</p>
+              <p class="mt-3 inline-flex items-center gap-2 text-[.95rem] font-semibold">
+                <span class="dot" id="status-dot" aria-hidden="true"></span><span id="status-text">Open now</span>
+              </p>
+            </div>
+            <div class="mt-5">
+              <div class="ticket-row"><span data-i18n="ticket.dry">Dry cleaning</span><span class="text-navy-500" data-i18n="ticket.dryv">Drop off anytime</span></div>
+              <div class="ticket-row"><span data-i18n="ticket.wash">Wash &amp; fold</span><span class="text-navy-500" data-i18n="ticket.washv">By the pound</span></div>
+              <div class="ticket-row"><span data-i18n="ticket.alter">Alterations</span><span class="text-navy-500" data-i18n="ticket.alterv">Ask for Jessica</span></div>
+            </div>
+          </div>
+          <div class="perf" aria-hidden="true"></div>
+          <div class="px-6 py-4 flex items-center justify-between gap-3">
+            <a href="https://www.google.com/maps/place/Quality+Dry+Cleaning+%26+Tailoring/@40.46759,-74.453824,17z" target="_blank" rel="noopener" class="link text-[.92rem] font-semibold" data-i18n="ticket.rating">4.0 on Google, 33 reviews</a>
+            <span class="flex gap-0.5 text-thread" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.6-5.7 5 1.7 7.4L12 18l-6.5 3.9 1.7-7.4-5.7-5 7.5-.6z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.6-5.7 5 1.7 7.4L12 18l-6.5 3.9 1.7-7.4-5.7-5 7.5-.6z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.6-5.7 5 1.7 7.4L12 18l-6.5 3.9 1.7-7.4-5.7-5 7.5-.6z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.9 7.5.6-5.7 5 1.7 7.4L12 18l-6.5 3.9 1.7-7.4-5.7-5 7.5-.6z"/></svg><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 6.9 7.5.6-5.7 5 1.7 7.4L12 18l-6.5 3.9 1.7-7.4-5.7-5 7.5-.6z"/></svg>
+            </span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="services" class="section bg-linen">
+  <div class="wrap grid lg:grid-cols-[.8fr_1.6fr] gap-10 lg:gap-16">
+    <div class="lg:sticky lg:top-28 self-start">
+      <h2 class="text-[2.25rem] sm:text-[3rem]" data-i18n="svc.title">Everything your clothes need, under one roof.</h2>
+      <p class="mt-5 text-navy-700 measure" data-i18n="svc.sub">Bring it all in one trip. Ask at the counter for prices on any item.</p>
+    </div>
+    <div>
+      <div class="svc">
+        <span class="svc-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4a2 2 0 1 1 2 2c-.8 0-2 .6-2 1.6V9l8.6 6.2c.9.6.4 1.8-.6 1.8H4c-1 0-1.5-1.2-.6-1.8L12 9"/><path d="M6 17v3h12v-3"/></svg></span>
+        <h3 class="text-[1.4rem]" data-i18n="svc.dry.t">Dry cleaning</h3>
+        <p class="col-start-2 md:col-start-auto text-navy-700" data-i18n="svc.dry.d">Suits, dresses, coats and anything labelled dry clean only, cleaned with care and returned on a hanger.</p>
+      </div>
+      <div class="svc">
+        <span class="svc-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16l-1.5 11h-13z"/><path d="M8 9V6a4 4 0 0 1 8 0v3"/><path d="M9 14h6"/></svg></span>
+        <h3 class="text-[1.4rem]" data-i18n="svc.wash.t">Wash, dry and fold</h3>
+        <p class="col-start-2 md:col-start-auto text-navy-700" data-i18n="svc.wash.d">Drop off a bag of laundry and pick it up clean and folded. Priced by the pound.</p>
+      </div>
+      <div class="svc">
+        <span class="svc-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2.5" width="16" height="19" rx="2.5"/><circle cx="12" cy="13.5" r="4.5"/><path d="M7.5 6h.01M10.5 6h.01"/></svg></span>
+        <h3 class="text-[1.4rem]" data-i18n="svc.laund.t">Laundromat</h3>
+        <p class="col-start-2 md:col-start-auto text-navy-700" data-i18n="svc.laund.d">Prefer to do it yourself? Use our washers and dryers, open from early morning until 9 pm.</p>
+      </div>
+      <div class="svc">
+        <span class="svc-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17h18l-1.6-5.2A4 4 0 0 0 15.6 9H9"/><path d="M9 9V6h4"/><path d="M7 13h.01M10 13h.01"/></svg></span>
+        <h3 class="text-[1.4rem]" data-i18n="svc.press.t">Pressing and ironing</h3>
+        <p class="col-start-2 md:col-start-auto text-navy-700" data-i18n="svc.press.d">Shirts, trousers and linens pressed crisp and ready to wear.</p>
+      </div>
+      <div class="svc">
+        <span class="svc-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.1 15.9M14.5 14.5 20 20M8.1 8.1 12 12"/></svg></span>
+        <h3 class="text-[1.4rem]" data-i18n="svc.tail.t">Tailoring and alterations</h3>
+        <p class="col-start-2 md:col-start-auto text-navy-700"><span data-i18n="svc.tail.d">Hems, sleeves, zippers and repairs, plus fittings for suits and formal wear.</span> <a href="#tailoring" class="link font-semibold" data-i18n="svc.tail.more">Meet our seamstress</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Tailoring -->
+<section id="tailoring" class="section">
+  <div class="wrap grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+    <div class="photo aspect-[4/5] max-h-[620px] order-last lg:order-first">
+      <img src="https://placehold.co/800x1000/22364E/EEF2F3?text=Tailoring&font=playfair-display" alt="A seamstress pinning the hem of a dress" width="800" height="1000">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-transparent" aria-hidden="true"></div>
+      <div class="absolute inset-0 mix-blend-multiply" style="background: linear-gradient(160deg, rgba(150, 185, 215, .22), rgba(22, 38, 58, .35));" aria-hidden="true"></div>
+      <p class="absolute left-5 right-5 bottom-5 text-linen text-[1rem] leading-snug" data-i18n="tail.caption">Fittings are done in the shop, while you wait for measurements.</p>
+    </div>
+    <div>
+      <h2 class="text-[2.25rem] sm:text-[3rem] max-w-[16ch]" data-i18n="tail.title">Alterations by Jessica, our seamstress.</h2>
+      <p class="mt-5 text-[1.08rem] text-navy-700 measure" data-i18n="tail.sub">Bring in anything that doesn't fit quite right. Jessica measures you in the shop and handles everything from a quick hem to a prom dress fitting.</p>
+      <ul class="mt-8 flex flex-wrap gap-2.5" aria-label="Alterations we do">
+        <li class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="tail.l1">Hemming trousers, skirts and dresses</span></li>
+        <li class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="tail.l2">Shortening sleeves</span></li>
+        <li class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="tail.l3">Replacing zippers</span></li>
+        <li class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="tail.l4">Mending tears and seams</span></li>
+        <li class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="tail.l5">Suits and formal wear</span></li>
+        <li class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="tail.l6">Prom and special-occasion dresses</span></li>
+        <li class="tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="tail.l7">Custom costume alterations</span></li>
+      </ul>
+      <a href="tel:+17322463346" class="btn btn-primary mt-9" data-i18n="tail.cta">Call to book a fitting</a>
+    </div>
+  </div>
+</section>
+
+<!-- Service options -->
+<section class="section bg-navy text-linen grain" style="background: radial-gradient(60% 80% at 100% 0%, rgba(150, 185, 215, .12), transparent 60%), radial-gradient(50% 70% at 0% 100%, rgba(124, 139, 153, .18), transparent 70%), #16263A;">
+  <div class="wrap">
+    <h2 class="text-[2.25rem] sm:text-[3rem] max-w-[18ch]" data-i18n="opt.title">Drop it off, or have it delivered.</h2>
+    <p class="mt-5 measure text-[1.05rem]" style="color: rgba(248, 250, 250, .78);" data-i18n="opt.sub">We serve North Brunswick, New Brunswick and East Brunswick.</p>
+    <div class="mt-12 grid md:grid-cols-3 gap-px rounded-2xl overflow-hidden" style="background: rgba(248, 250, 250, .12); box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .5);">
+      <div class="p-7 lg:p-9" style="background: #1B2E45;">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#A9C4DD" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 4h14v12H1zM15 9h4l4 4v3h-8"/><circle cx="5.5" cy="18.5" r="2"/><circle cx="18.5" cy="18.5" r="2"/></svg>
+        <h3 class="mt-5 text-[1.45rem]" data-i18n="opt.d.t">Delivery</h3>
+        <p class="mt-2" style="color: rgba(248, 250, 250, .74);" data-i18n="opt.d.d">Call to arrange delivery of your cleaned and altered clothes.</p>
+      </div>
+      <div class="p-7 lg:p-9" style="background: #1B2E45;">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#A9C4DD" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="17" rx="2"/><path d="M16 2.5v4M8 2.5v4M3 10h18M8 15l2.5 2.5L16 13"/></svg>
+        <h3 class="mt-5 text-[1.45rem]" data-i18n="opt.r.t">Reservations</h3>
+        <p class="mt-2" style="color: rgba(248, 250, 250, .74);" data-i18n="opt.r.d">Book ahead for a fitting or a large order so we're ready when you arrive.</p>
+      </div>
+      <div class="p-7 lg:p-9" style="background: #1B2E45;">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#A9C4DD" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9.5 12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M9 21v-7h6v7"/></svg>
+        <h3 class="mt-5 text-[1.45rem]" data-i18n="opt.c.t">In-store collection</h3>
+        <p class="mt-2" style="color: rgba(248, 250, 250, .74);" data-i18n="opt.c.d">Pick up whenever suits you. We're open from early morning until 9 pm, every day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Hours & visit -->
+<section id="visit" class="section">
+  <div class="wrap grid lg:grid-cols-[.9fr_1.1fr] gap-10 lg:gap-14">
+    <div>
+      <h2 class="text-[2.25rem] sm:text-[3rem]" data-i18n="visit.title">Open seven days, early till late.</h2>
+      <div class="mt-8 rounded-2xl bg-linen p-3 sm:p-4" style="box-shadow: var(--e-2);">
+        <div class="hours-row" data-days="1,2,3,4,5"><span data-i18n="visit.wk">Monday to Friday</span><span>7 am – 9 pm</span></div>
+        <div class="hours-row" data-days="6"><span data-i18n="visit.sat">Saturday</span><span>6 am – 9 pm</span></div>
+        <div class="hours-row" data-days="0"><span data-i18n="visit.sun">Sunday</span><span>7 am – 9 pm</span></div>
+      </div>
+      <dl class="mt-10 grid sm:grid-cols-2 gap-8">
+        <div>
+          <dt class="text-[.9rem] text-navy-500" data-i18n="visit.addr">Address</dt>
+          <dd class="mt-1 text-[1.05rem]">699 Georges Rd<br>North Brunswick Township, NJ 08902</dd>
+          <dd class="mt-2"><a class="link font-semibold" href="https://www.google.com/maps/place/Quality+Dry+Cleaning+%26+Tailoring/@40.46759,-74.453824,17z" target="_blank" rel="noopener" data-i18n="cta.directions">Get directions</a></dd>
+        </div>
+        <div>
+          <dt class="text-[.9rem] text-navy-500" data-i18n="visit.phone">Phone</dt>
+          <dd class="mt-1 text-[1.05rem]"><a class="link" href="tel:+17322463346">(732) 246-3346</a></dd>
+          <dd class="mt-1 text-[1.05rem]"><a class="link" href="tel:+17323361413">(732) 336-1413</a> <span class="text-navy-500 text-[.92rem]" data-i18n="visit.mobile">mobile</span></dd>
+        </div>
       </dl>
     </div>
-    <div class="lg:col-span-5 relative rise d3" style="max-width:440px;width:100%;justify-self:center">
-      <div class="mirror" role="img" aria-label="A spinning red, white and blue barber pole">
-        <div class="barber-pole" aria-hidden="true">
-          <div class="bp-finial"></div>
-          <div class="bp-neck"></div>
-          <div class="bp-cap"></div>
-          <div class="bp-tube"><div class="bp-stripes"></div><div class="bp-glass"></div></div>
-          <div class="bp-cap bottom"></div>
-        </div>
-      </div>
-      <div class="float-card text-center" style="left:50%;bottom:-30px;transform:translateX(-50%);white-space:nowrap">
-        <p class="m-0 muted" style="font-size:13px;line-height:1.4">Weeknights and Saturdays</p>
-        <p class="m-0 display" style="font-size:26px;margin-top:4px">Until 11 pm</p>
-      </div>
-    </div>
-  </div>
-</section>
-<div class="pole" aria-hidden="true"></div>
-
-<!-- SERVICES -->
-<section id="services" style="padding:var(--s6) 0">
-  <div class="wrap">
-    <div class="grid lg:grid-cols-12 gap-8 lg:gap-12">
-      <div class="lg:col-span-4">
-        <h2 class="display" style="font-size:clamp(40px,5.5vw,64px);margin:0">Services &amp; prices</h2>
-        <p class="muted" style="margin:var(--s2) 0 var(--s4);max-width:30em">Every cut is finished with a clean line up. Prices marked “from” can go up depending on length and detail.</p>
-        <div class="tabs" role="tablist" aria-label="Service categories" id="tabs"></div>
-      </div>
-      <div class="lg:col-span-8">
-        <div class="menu-card">
-          <div id="panel" class="panel" role="tabpanel" tabindex="0"></div>
-        </div>
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4" style="margin-top:var(--s3);padding:0 var(--s1)">
-          <p class="muted m-0" style="font-size:15px">Multi-visit packages are sold in the shop. Ask at the front desk.</p>
-          <a class="btn btn-primary" href="https://booksy.com/en-us/1139310_studio-hair-salon-barbershop_barber-shop_28625_new-brunswick" target="_blank" rel="noopener">Book a service</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- THE SHOP -->
-<section id="shop" style="padding:0 0 var(--s6)">
-  <div class="wrap">
-    <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-      <div class="lg:col-span-5">
-        <h2 class="display" style="font-size:clamp(36px,4.6vw,56px);margin:0">A neighborhood chair, after hours too.</h2>
-        <p class="muted" style="margin:var(--s3) 0 0;max-width:30em">We're up on the first floor at 25A Easton Ave, a short walk from College Ave. Most nights we cut until 11, so you can come in after class, after work, or the night before something big.</p>
-        <p class="muted" style="margin:var(--s2) 0 0;max-width:30em">Bring the kids, bring a photo, or just tell us what's not working. Plenty of regulars ask for Francis by name.</p>
-      </div>
-      <div class="lg:col-span-7 grid sm:grid-cols-2 gap-4">
-        <a class="spec" href="#services" data-tab="cuts">
-          <svg class="spec-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M14 13h20V9H14z"/><path d="M16 9V5M20 9V5M24 9V5M28 9V5M32 9V5"/><rect x="15" y="13" width="18" height="31" rx="7"/><rect x="21" y="21" width="6" height="10" rx="3" class="fill"/></svg>
-          <span class="spec-title">Fades &amp; cuts</span>
-          <span class="spec-text">Regular, skin and brush fades, buzz cuts and scissor work.</span>
-          <span class="spec-price">From $40</span>
-        </a>
-        <a class="spec" href="#services" data-tab="lineup">
-          <svg class="spec-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M4 14h26c6 0 8 4 8 9v4H10c-4 0-6-3-6-7z"/><path d="M10 21h20"/><path d="M38 25l6 17" class="accent"/><circle cx="38" cy="25" r="3" class="fill"/></svg>
-          <span class="spec-title">Beard &amp; razor</span>
-          <span class="spec-text">Beard trims, crisp line ups and straight razor finishes.</span>
-          <span class="spec-price">From $20</span>
-        </a>
-        <a class="spec" href="#services" data-tab="kids">
-          <svg class="spec-icon" viewBox="0 0 48 48" aria-hidden="true"><rect x="5" y="12" width="38" height="9" rx="3"/><path d="M9 21v13M13 21v13M17 21v13M21 21v13M25 21v9M29 21v9M33 21v9M37 21v9" /><path d="M5 12h38" class="accent"/></svg>
-          <span class="spec-title">Kids &amp; teens</span>
-          <span class="spec-text">Fades and tapers for kids under 12 and boys under 18.</span>
-          <span class="spec-price">From $25</span>
-        </a>
-        <a class="spec" href="#services" data-tab="locs">
-          <svg class="spec-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M18 4c16 8-4 16 12 24s-6 12 0 16"/><path d="M30 4c-16 8 4 16-12 24s6 12 0 16" class="accent"/></svg>
-          <span class="spec-title">Locs &amp; twists</span>
-          <span class="spec-text">Loc retwists and two strand twists, about an hour.</span>
-          <span class="spec-price">From $75</span>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- VISIT -->
-<section id="visit" class="grain" style="padding:var(--s6) 0;background:radial-gradient(60% 60% at 100% 0%,rgba(200,16,46,.08),transparent 70%),radial-gradient(60% 60% at 0% 100%,rgba(159,179,200,.10),transparent 70%),var(--navy-deep);box-shadow:inset 0 1px 0 var(--line)">
-  <div class="wrap grid lg:grid-cols-12 gap-8 lg:gap-12">
-    <div class="lg:col-span-5">
-      <h2 class="display" style="font-size:clamp(40px,5.5vw,64px);margin:0">Hours &amp; location</h2>
-      <div style="margin-top:var(--s4)" id="hours">
-        <div class="hours-row" data-days="1,2,3,4,5"><span class="font-semibold">Monday to Friday</span><span class="muted">10:30 am – 11 pm</span></div>
-        <div class="hours-row" data-days="6"><span class="font-semibold">Saturday</span><span class="muted">10 am – 11 pm</span></div>
-        <div class="hours-row" data-days="0"><span class="font-semibold">Sunday</span><span class="muted">12:30 pm – 8 pm</span></div>
-      </div>
-      <address class="not-italic" style="margin-top:var(--s4);padding:0 20px">
-        <p class="m-0 font-semibold" style="font-size:19px">25A Easton Ave, 1st floor</p>
-        <p class="m-0 muted">New Brunswick, NJ 08901</p>
-        <p class="m-0" style="margin-top:var(--s2)"><a class="link font-semibold" href="tel:+17324634018">(732) 463-4018</a></p>
-        <p class="m-0" style="margin-top:var(--s1)"><a class="link" href="https://www.google.com/maps/place/Studio+Hair+Salon+%26+Barbershop/@40.4976181,-74.4479853,17z" target="_blank" rel="noopener">Get directions in Google Maps</a></p>
-      </address>
-    </div>
-    <div class="lg:col-span-7">
-      <div style="border-radius:24px;overflow:hidden;box-shadow:var(--shadow-float),inset 0 0 0 1px var(--line);height:100%;min-height:360px;background:var(--navy-2)">
-        <iframe class="map" title="Map showing Studio Hair Salon and Barbershop at 25A Easton Ave, New Brunswick" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=40.4976181,-74.4479853&z=17&output=embed"></iframe>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
-<section class="hero grain" style="padding:var(--s6) 0">
-  <div class="wrap text-center flex flex-col items-center">
-    <h2 class="display" style="font-size:clamp(40px,6.4vw,80px);margin:0;max-width:12em">Your chair's waiting tonight.</h2>
-    <p class="muted" style="margin:var(--s3) 0 0;max-width:32em">Pick a time on Booksy, day or night. Late appointments go fast, so book ahead if you can.</p>
-    <div class="flex flex-wrap justify-center gap-3" style="margin-top:var(--s4)">
-      <a class="btn btn-primary" href="https://booksy.com/en-us/1139310_studio-hair-salon-barbershop_barber-shop_28625_new-brunswick" target="_blank" rel="noopener">Book on Booksy</a>
-      <a class="btn btn-ghost" href="tel:+17324634018">Call the shop</a>
+    <div class="relative rounded-[22px] overflow-hidden min-h-[360px] lg:min-h-full bg-navy-700" style="box-shadow: var(--e-3);">
+      <a href="https://www.google.com/maps/place/Quality+Dry+Cleaning+%26+Tailoring/@40.46759,-74.453824,17z" target="_blank" rel="noopener" class="absolute inset-0 grid place-items-center text-linen font-semibold" aria-hidden="true" tabindex="-1">699 Georges Rd</a>
+      <iframe title="Map showing Quality Dry Cleaning & Tailoring at 699 Georges Rd" class="absolute inset-0 w-full h-full border-0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=Quality+Dry+Cleaning+%26+Tailoring,+699+Georges+Rd,+North+Brunswick+Township,+NJ+08902&z=16&output=embed"></iframe>
     </div>
   </div>
 </section>
 </main>
 
-<footer style="background:var(--navy-deep);color:var(--steel);padding:var(--s5) 0 120px;box-shadow:inset 0 1px 0 var(--line)">
-  <div class="wrap flex flex-col md:flex-row justify-between gap-6" style="font-size:15px">
+<footer class="border-t" style="border-color: var(--rule);">
+  <div class="wrap py-10 flex flex-col md:flex-row md:items-center justify-between gap-6 text-[.95rem]">
     <div>
-      <p class="display m-0" style="font-size:24px">Studio Hair Salon &amp; Barbershop</p>
-      <p class="m-0" style="margin-top:var(--s1)">25A Easton Ave, 1st floor, New Brunswick, NJ 08901</p>
+      <p class="font-serif text-[1.15rem]">Quality Dry Cleaning &amp; Tailoring</p>
+      <p class="text-navy-500 mt-1">Servicio de lavandería, sastrería, dry cleaning y más.</p>
     </div>
-    <div class="flex flex-col md:items-end gap-1">
-      <a class="link" href="tel:+17324634018">(732) 463-4018</a>
-      <a class="link" href="https://booksy.com/en-us/1139310_studio-hair-salon-barbershop_barber-shop_28625_new-brunswick" target="_blank" rel="noopener">Book on Booksy</a>
-      <p class="m-0" style="margin-top:var(--s1)">© <span id="yr">2026</span> Studio Hair Salon &amp; Barbershop</p>
+    <div class="flex flex-wrap gap-x-6 gap-y-2 text-navy-700">
+      <a class="link" href="tel:+17322463346">(732) 246-3346</a>
+      <a class="link" href="https://www.facebook.com/p/Quality-Dry-Cleaning-Tailoring-61555775675435/" target="_blank" rel="noopener">Facebook</a>
+      <span>© 2026</span>
     </div>
   </div>
 </footer>
 
-<div class="sticky-book" id="stickyBook">
-  <a class="btn btn-primary" href="https://booksy.com/en-us/1139310_studio-hair-salon-barbershop_barber-shop_28625_new-brunswick" target="_blank" rel="noopener">Book now</a>
-  <a class="btn btn-ghost" href="tel:+17324634018">Call</a>
-</div>
-
 <script>
-  // ---------- Services menu ----------
-  const MENU = [
-    { id:'cuts', label:"Cuts & fades", items:[
-      ["Men's regular fade","$40","40 min"],["Men's skin fade","$45","30 min"],["Skin fade (buzz cut)","$40","35 min"],
-      ["Regular buzz cut","from $40","30 min"],["Brush cut","$40","30 min"],["Scissors haircut","from $55","30 min"]]},
-    { id:'beard', label:"Cuts with beard", items:[
-      ["Regular fade with beard and straight razor","from $45","30 min"],["Skin fade with beard and straight razor","from $50","40 min"],
-      ["Brush cut with beard","$45","40 min"],["Head shave with beard","$40","30 min"]]},
-    { id:'lineup', label:"Beard & line up", items:[["Beard trim and line up","$30","30 min"],["Line up","$20","30 min"]]},
-    { id:'boys', label:"Boys (under 18)", items:[["Boys regular fade","$35","30 min"],["Boys skin fade","$40","30 min"],["Boys just taper","$35","30 min"]]},
-    { id:'kids', label:"Kids (under 12)", items:[["Kids regular fade","$25","30 min"],["Kids just taper","$25","30 min"],["Kids skin fade (under 11)","$30","30 min"]]},
-    { id:'locs', label:"Locs & twists", items:[["Loc retwist","from $75","1 hr"],["Two strand twist","from $100","1 hr"]]},
-    { id:'facial', label:"Facials & packages", items:[["Facial with massage","$45","40 min"],["Haircut with beard, facial and massage","from $105","1 hr"]]},
-  ];
-  const tabs = document.getElementById('tabs'), panel = document.getElementById('panel');
-  function priceHTML(p){ return p.startsWith('from') ? `<small>from</small>${p.replace('from ','')}` : p; }
-  function select(i, focus){
-    [...tabs.children].forEach((t,j)=>{ t.setAttribute('aria-selected', j===i); t.tabIndex = j===i?0:-1; });
-    const c = MENU[i];
-    panel.setAttribute('aria-labelledby','tab-'+c.id);
-    panel.innerHTML = c.items.map(([n,p,t])=>`<div class="row"><span class="row-name">${n}</span><span class="row-price">${priceHTML(p)}</span><span class="row-time">${t}</span></div>`).join('');
-    panel.classList.remove('panel'); void panel.offsetWidth; panel.classList.add('panel');
-    if(focus) tabs.children[i].focus();
-  }
-  MENU.forEach((c,i)=>{
-    const b=document.createElement('button');
-    b.className='tab'; b.id='tab-'+c.id; b.setAttribute('role','tab'); b.textContent=c.label;
-    b.setAttribute('aria-controls','panel');
-    b.addEventListener('click',()=>select(i));
-    b.addEventListener('keydown',e=>{
-      const n=MENU.length; let k=null;
-      if(['ArrowRight','ArrowDown'].includes(e.key)) k=(i+1)%n;
-      if(['ArrowLeft','ArrowUp'].includes(e.key)) k=(i-1+n)%n;
-      if(k!==null){e.preventDefault();select(k,true);}
-    });
-    tabs.appendChild(b);
-  });
-  select(0);
-  // specialty tiles open the matching price tab
-  document.querySelectorAll('.spec[data-tab]').forEach(a=>a.addEventListener('click',()=>{
-    const i = MENU.findIndex(c=>c.id===a.dataset.tab); if(i>-1) select(i);
-  }));
+  const T = {
+    en: {
+      skip: 'Skip to content',
+      'nav.services': 'Services', 'nav.tailoring': 'Tailoring', 'nav.visit': 'Hours &amp; location',
+      'cta.callShort': 'Call the shop', 'cta.call': 'Call (732) 246-3346', 'cta.directions': 'Get directions',
+      'hero.where': '699 Georges Rd, North Brunswick',
+      'hero.title': 'Clean clothes and a sharp fit, seven days a week.',
+      'hero.sub': 'Dry cleaning, laundry by the pound, a self-service laundromat and alterations by our in-house seamstress. Drop off before work, pick up on your way home.',
+      'hero.lang': 'Hablamos español.',
+      'ticket.today': 'Today', 'ticket.dry': 'Dry cleaning', 'ticket.dryv': 'Drop off anytime', 'ticket.wash': 'Wash &amp; fold', 'ticket.washv': 'By the pound',
+      'ticket.alter': 'Alterations', 'ticket.alterv': 'Ask for Jessica', 'ticket.rating': '4.0 on Google, 33 reviews',
+      open: 'Open now', closed: 'Closed now', opensAt: 'Opens at',
+      'svc.title': 'Everything your clothes need, under one roof.', 'svc.sub': 'Bring it all in one trip. Ask at the counter for prices on any item.',
+      'svc.dry.t': 'Dry cleaning', 'svc.dry.d': 'Suits, dresses, coats and anything labelled dry clean only, cleaned with care and returned on a hanger.',
+      'svc.wash.t': 'Wash, dry and fold', 'svc.wash.d': 'Drop off a bag of laundry and pick it up clean and folded. Priced by the pound.',
+      'svc.laund.t': 'Laundromat', 'svc.laund.d': 'Prefer to do it yourself? Use our washers and dryers, open from early morning until 9 pm.',
+      'svc.press.t': 'Pressing and ironing', 'svc.press.d': 'Shirts, trousers and linens pressed crisp and ready to wear.',
+      'svc.tail.t': 'Tailoring and alterations', 'svc.tail.d': 'Hems, sleeves, zippers and repairs, plus fittings for suits and formal wear.', 'svc.tail.more': 'Meet our seamstress',
+      'tail.caption': 'Fittings are done in the shop, while you wait for measurements.',
+      'tail.title': 'Alterations by Jessica, our seamstress.',
+      'tail.sub': 'Bring in anything that doesn\'t fit quite right. Jessica measures you in the shop and handles everything from a quick hem to a prom dress fitting.',
+      'tail.l1': 'Hemming trousers, skirts and dresses', 'tail.l2': 'Shortening sleeves', 'tail.l3': 'Replacing zippers', 'tail.l4': 'Mending tears and seams',
+      'tail.l5': 'Suits and formal wear', 'tail.l6': 'Prom and special-occasion dresses', 'tail.l7': 'Custom costume alterations', 'tail.cta': 'Call to book a fitting',
+      'opt.title': 'Drop it off, or have it delivered.', 'opt.sub': 'We serve North Brunswick, New Brunswick and East Brunswick.',
+      'opt.d.t': 'Delivery', 'opt.d.d': 'Call to arrange delivery of your cleaned and altered clothes.',
+      'opt.r.t': 'Reservations', 'opt.r.d': 'Book ahead for a fitting or a large order so we\'re ready when you arrive.',
+      'opt.c.t': 'In-store collection', 'opt.c.d': 'Pick up whenever suits you. We\'re open from early morning until 9 pm, every day.',
+      'visit.title': 'Open seven days, early till late.', 'visit.wk': 'Monday to Friday', 'visit.sat': 'Saturday', 'visit.sun': 'Sunday',
+      'visit.addr': 'Address', 'visit.phone': 'Phone', 'visit.mobile': 'mobile',
+    },
+    es: {
+      skip: 'Ir al contenido',
+      'nav.services': 'Servicios', 'nav.tailoring': 'Sastrería', 'nav.visit': 'Horario y ubicación',
+      'cta.callShort': 'Llamar a la tienda', 'cta.call': 'Llamar al (732) 246-3346', 'cta.directions': 'Cómo llegar',
+      'hero.where': '699 Georges Rd, North Brunswick',
+      'hero.title': 'Ropa limpia y a su medida, los siete días.',
+      'hero.sub': 'Dry cleaning, lavado por libra, lavandería de autoservicio y arreglos con nuestra costurera. Deje su ropa antes del trabajo y recójala de camino a casa.',
+      'hero.lang': 'We speak English and Spanish.',
+      'ticket.today': 'Hoy', 'ticket.dry': 'Dry cleaning', 'ticket.dryv': 'Déjelo cuando quiera', 'ticket.wash': 'Lavado y doblado', 'ticket.washv': 'Por libra',
+      'ticket.alter': 'Arreglos', 'ticket.alterv': 'Pregunte por Jessica', 'ticket.rating': '4.0 en Google, 33 reseñas',
+      open: 'Abierto ahora', closed: 'Cerrado ahora', opensAt: 'Abre a las',
+      'svc.title': 'Todo lo que su ropa necesita, en un solo lugar.', 'svc.sub': 'Tráigalo todo en un solo viaje. Pregunte en el mostrador por los precios.',
+      'svc.dry.t': 'Dry cleaning', 'svc.dry.d': 'Trajes, vestidos, abrigos y todo lo que diga “dry clean only”, limpio con cuidado y entregado en gancho.',
+      'svc.wash.t': 'Lavado, secado y doblado', 'svc.wash.d': 'Deje una bolsa de ropa y recójala limpia y doblada. Se cobra por libra.',
+      'svc.laund.t': 'Lavandería', 'svc.laund.d': '¿Prefiere hacerlo usted? Use nuestras lavadoras y secadoras, desde temprano hasta las 9 pm.',
+      'svc.press.t': 'Planchado', 'svc.press.d': 'Camisas, pantalones y ropa de cama, bien planchados y listos para usar.',
+      'svc.tail.t': 'Sastrería y arreglos', 'svc.tail.d': 'Bastillas, mangas, cierres y reparaciones, además de ajustes de trajes y ropa formal.', 'svc.tail.more': 'Conozca a nuestra costurera',
+      'tail.caption': 'Las medidas se toman en la tienda, mientras usted espera.',
+      'tail.title': 'Arreglos con Jessica, nuestra costurera.',
+      'tail.sub': 'Traiga la ropa que no le queda bien. Jessica le toma las medidas en la tienda y se encarga de todo, desde una bastilla rápida hasta un vestido de prom.',
+      'tail.l1': 'Bastillas de pantalones, faldas y vestidos', 'tail.l2': 'Acortar mangas', 'tail.l3': 'Cambio de cierres', 'tail.l4': 'Reparación de rasgaduras y costuras',
+      'tail.l5': 'Trajes y ropa formal', 'tail.l6': 'Vestidos de prom y ocasiones especiales', 'tail.l7': 'Arreglos de disfraces a medida', 'tail.cta': 'Llame para una prueba',
+      'opt.title': 'Tráigalo o se lo entregamos.', 'opt.sub': 'Atendemos North Brunswick, New Brunswick y East Brunswick.',
+      'opt.d.t': 'Entrega a domicilio', 'opt.d.d': 'Llame para coordinar la entrega de su ropa limpia o arreglada.',
+      'opt.r.t': 'Reservaciones', 'opt.r.d': 'Reserve con tiempo para una prueba o un pedido grande y lo tendremos listo.',
+      'opt.c.t': 'Recogida en tienda', 'opt.c.d': 'Recoja cuando le convenga. Abrimos desde temprano hasta las 9 pm, todos los días.',
+      'visit.title': 'Abierto los siete días, de temprano a tarde.', 'visit.wk': 'Lunes a viernes', 'visit.sat': 'Sábado', 'visit.sun': 'Domingo',
+      'visit.addr': 'Dirección', 'visit.phone': 'Teléfono', 'visit.mobile': 'celular',
+    },
+  };
 
-  // ---------- Live open/closed status (shop time, New York) ----------
-  const HOURS = {0:[12.5,20],1:[10.5,23],2:[10.5,23],3:[10.5,23],4:[10.5,23],5:[10.5,23],6:[10,23]};
-  const fmt = h => { const hr=Math.floor(h), m=Math.round((h-hr)*60); const h12=((hr+11)%12)+1; return h12+(m?':'+String(m).padStart(2,'0'):'')+(hr<12?' am':' pm'); };
-  const DAYS=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-  function nyNow(){
-    const p = Object.fromEntries(new Intl.DateTimeFormat('en-US',{timeZone:'America/New_York',weekday:'short',hour:'numeric',minute:'numeric',hourCycle:'h23'}).formatToParts(new Date()).map(x=>[x.type,x.value]));
-    return { day:['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(p.weekday), h:(+p.hour)+(+p.minute)/60 };
+  // Hours in shop local time (America/New_York): [open, close] in hours, indexed by weekday (0 = Sunday)
+  const HOURS = { 0: [7, 21], 1: [7, 21], 2: [7, 21], 3: [7, 21], 4: [7, 21], 5: [7, 21], 6: [6, 21] };
+  let lang = 'en';
+
+  function shopNow() {
+    const p = Object.fromEntries(new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', weekday: 'short', hour: 'numeric', minute: 'numeric', hour12: false })
+      .formatToParts(new Date()).map(x => [x.type, x.value]));
+    const day = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(p.weekday);
+    return { day, h: (Number(p.hour) % 24) + Number(p.minute) / 60 };
   }
-  function updateStatus(){
-    const {day,h} = nyNow(); const [o,c] = HOURS[day];
-    const dot=document.getElementById('statusDot'), txt=document.getElementById('statusText');
-    if(h>=o && h<c){ dot.classList.add('open'); txt.textContent = `Open now, until ${fmt(c)} tonight`; }
-    else {
-      dot.classList.remove('open');
-      if(h<o) txt.textContent = `Closed now, opens today at ${fmt(o)}`;
-      else { const nd=(day+1)%7; txt.textContent = `Closed now, opens ${DAYS[nd]} at ${fmt(HOURS[nd][0])}`; }
+
+  function updateStatus() {
+    const { day, h } = shopNow();
+    const [o, c] = HOURS[day];
+    const isOpen = h >= o && h < c;
+    document.getElementById('today-hours').textContent = `${o} am – ${c - 12} pm`;
+    const dot = document.getElementById('status-dot');
+    dot.classList.toggle('closed', !isOpen);
+    let msg = isOpen ? T[lang].open : T[lang].closed;
+    if (!isOpen) {
+      const next = h < o ? o : HOURS[(day + 1) % 7][0];
+      msg += `. ${T[lang].opensAt} ${next} am`;
     }
-    document.querySelectorAll('#hours .hours-row').forEach(r=>{
-      r.classList.toggle('today', r.dataset.days.split(',').map(Number).includes(day));
-    });
+    document.getElementById('status-text').textContent = msg;
+    document.querySelectorAll('.hours-row').forEach(r => r.classList.toggle('is-today', r.dataset.days.split(',').includes(String(day))));
   }
-  updateStatus(); setInterval(updateStatus, 60000);
 
-  // ---------- Nav + mobile book bar ----------
-  const nav=document.getElementById('nav'), sb=document.getElementById('stickyBook');
-  function onScroll(){ const y=scrollY; nav.classList.toggle('scrolled', y>24); sb.classList.toggle('show', y>520); }
-  addEventListener('scroll', onScroll, {passive:true}); onScroll();
-  document.getElementById('yr').textContent = new Date().getFullYear();
+  function setLang(next) {
+    lang = next;
+    document.documentElement.lang = next;
+    document.querySelectorAll('[data-i18n]').forEach(el => { const v = T[next][el.dataset.i18n]; if (v) el.innerHTML = v; });
+    document.querySelectorAll('.lang-btn').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === next)));
+    updateStatus();
+    try { localStorage.setItem('qdc-lang', next); } catch (e) {}
+  }
+
+  document.querySelectorAll('.lang-btn').forEach(b => b.addEventListener('click', () => setLang(b.dataset.lang)));
+  let saved = null;
+  try { saved = localStorage.getItem('qdc-lang'); } catch (e) {}
+  setLang(saved === 'es' ? 'es' : 'en');
+  setInterval(updateStatus, 60000);
 </script>
 </body>
 </html>
